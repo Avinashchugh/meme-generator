@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: "Karla", sans-serif;
+    margin: 0;
+}
+.header {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    background: linear-gradient(90deg, #9453ac 1.18%, #1190b7 100%);
+    color: white;
+    padding: 20px;
+}
+
+.header--title {
+    font-size: 1.25rem;
+    margin-right: auto;
+}
+.button{
+    background: linear-gradient(90deg, #9453ac 1.18%, #1190b7 100%);
+    width: -webkit-fill-available;  
+    font-family: "Karla", sans-serif;
+    border-radius: 5px; 
+}
