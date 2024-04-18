@@ -3,31 +3,30 @@ import { Row, Col, Form, Button } from "react-bootstrap";
 import { FcFrame } from "react-icons/fc";
 import memesData from "../memesData";
 
-
 const Inputform = () => {
   // const [memeImage,setMemeImage] = useState("http://i.imgflip.com/1bij.jpg")
-  const [meme , setMeme] = useState({
+  const [meme, setMeme] = useState({
     topText: "",
     buttomText: "",
-    randomImage: "http://i.imgflip.com/1bij.jpg"
-  })
-  const [allMemeImages, setAllMemeImages] = React.useState(memesData)
-    const getMemeImage=()=>{
-        const memesArray = memesData.data.memes;
-        const randomNumber = Math.floor(Math.random() * memesArray.length)
-        const url = memesArray[randomNumber].url;
-        setMeme(prevMeme => ({
-          ...prevMeme,
-          randomImage: url
-      }))
-    }
-    const handleChange = (event)=>{
-      const {name, value} = event.target
-        setMeme(prevMeme => ({
-            ...prevMeme,
-            [name]: value
-        }))
-    }
+    randomImage: "http://i.imgflip.com/1bij.jpg",
+  });
+  const [allMemeImages, setAllMemeImages] = React.useState(memesData);
+  const getMemeImage = () => {
+    const memesArray = memesData.data.memes;
+    const randomNumber = Math.floor(Math.random() * memesArray.length);
+    const url = memesArray[randomNumber].url;
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      randomImage: url,
+    }));
+  };
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      [name]: value,
+    }));
+  };
   return (
     <div className="py-5">
       <Row className="gy-3 mx-5">
@@ -56,10 +55,15 @@ const Inputform = () => {
       </Row>
       <hr className="my-4" />
       <Button className="button mx-5" onClick={getMemeImage}>
+        <span className="imgIcon">
+        <lord-icon
+          src="https://cdn.lordicon.com/bzqvamqv.json"
+          trigger="hover"
+          style={{ width: "50px", height: "30px" }}
+        ></lord-icon>
         Get a new Meme image
-        <span className="mx-1">
-          <FcFrame />
         </span>
+        
       </Button>
       <div className="meme">
         <img src={meme.randomImage} className="memeimage" />

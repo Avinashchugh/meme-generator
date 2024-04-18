@@ -78,3 +78,8 @@ body{
 .top {
     top: 0;
 }
+.imgIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
