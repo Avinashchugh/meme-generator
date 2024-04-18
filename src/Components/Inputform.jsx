@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
-import { FcFrame } from "react-icons/fc";
 import memesData from "../memesData";
 
 const Inputform = () => {
-  // const [memeImage,setMemeImage] = useState("http://i.imgflip.com/1bij.jpg")
   const [meme, setMeme] = useState({
     topText: "",
     buttomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
-  const [allMemeImages, setAllMemeImages] = React.useState(memesData);
   const getMemeImage = () => {
     const memesArray = memesData.data.memes;
     const randomNumber = Math.floor(Math.random() * memesArray.length);
@@ -35,7 +32,7 @@ const Inputform = () => {
           <Form.Control
             type="text"
             id="cc-name"
-            placeholder=""
+            placeholder="Write TopText"
             required
             value={meme.topText}
             name="topText"
@@ -46,7 +43,7 @@ const Inputform = () => {
           <Form.Label htmlFor="cc-number">Buttom Text</Form.Label>
           <Form.Control
             type="text"
-            placeholder=""
+            placeholder="Write BottomText"
             value={meme.buttomText}
             name="buttomText"
             onChange={handleChange}
@@ -58,7 +55,7 @@ const Inputform = () => {
         <span className="imgIcon">
         <lord-icon
           src="https://cdn.lordicon.com/bzqvamqv.json"
-          trigger="hover"
+          trigger="hover" 
           style={{ width: "50px", height: "30px" }}
         ></lord-icon>
         Get a new Meme image
