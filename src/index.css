@@ -12,6 +12,11 @@ body{
     background: linear-gradient(90deg, #9453ac 1.18%, #1190b7 100%);
     color: white;
     padding: 20px;
+    box-shadow: 
+    0px 2.98256px 7.4564px rgba(148, 83, 172, 0.5), 
+    0px 2.98256px 7.4564px rgba(17, 144, 183, 0.5);
+
+    
 }
 
 .header--title {
@@ -23,4 +28,53 @@ body{
     width: -webkit-fill-available;  
     font-family: "Karla", sans-serif;
     border-radius: 5px; 
+    box-shadow: 
+    0px 2.98256px 7.4564px rgba(148, 83, 172, 0.5), 
+    0px 2.98256px 7.4564px rgba(17, 144, 183, 0.5);
+}
+.memeimage{
+    margin-top: 10px;
+    width: -webkit-fill-available;
+}
+
+.meme {
+    position: relative;
+}
+
+.meme--image {
+    max-width: 100%;
+    border-radius: 3px;
+}
+
+.meme--text {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    font-family: impact, sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.top {
+    top: 0;
 }
