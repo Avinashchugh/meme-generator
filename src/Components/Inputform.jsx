@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
-import memesData from "../memesData";
 
 const Inputform = () => {
   const [meme, setMeme] = useState({
@@ -8,10 +7,16 @@ const Inputform = () => {
     buttomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
+  const [allMemes, setAllMemes] = React.useState([])
+  useEffect(()=>{
+    fetch("https://api.imgflip.com/get_memes")
+    .then(res=>res.json())
+    .then(data=>setAllMemes(data.data.memes))
+  },[])
   const getMemeImage = () => {
-    const memesArray = memesData.data.memes;
-    const randomNumber = Math.floor(Math.random() * memesArray.length);
-    const url = memesArray[randomNumber].url;
+    
+    const randomNumber = Math.floor(Math.random() * allMemes.length);
+    const url = allMemes[randomNumber].url;
     setMeme((prevMeme) => ({
       ...prevMeme,
       randomImage: url,
